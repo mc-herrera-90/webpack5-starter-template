@@ -28,6 +28,12 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Deploy to Github Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+
       - name: Configure GitHub Pages via API
         run: |
           curl -X PATCH \
@@ -35,9 +41,3 @@ jobs:
             -H "Accept: application/vnd.github.v3+json" \
             -d '{"source": {"branch": "gh-pages", "path": "/"}}' \
             https://api.github.com/repos/${{ github.repository }}/pages
-
-      - name: Deploy to Github Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
