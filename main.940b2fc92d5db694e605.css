@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  place-items: center;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #5acbdaaa);
+}
+
+/*# sourceMappingURL=main.940b2fc92d5db694e605.css.map*/
